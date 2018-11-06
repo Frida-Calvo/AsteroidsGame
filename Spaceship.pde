@@ -88,34 +88,24 @@ class Spaceship extends Floater
 
     }
 
-		void setX(int x){
-			myCenterX = (double) x;
-		}  
-		int getX(){
-			return (int) myCenterX;
-		}   
-  		void setY(int y){
-  			myCenterY =  (double)y;
-  		}   
-  		int getY(){
-  			return (int)myCenterY;
-  		}   
-  		void setDirectionX(double x){
-  			myDirectionX = x;
-  		}   
-  		double getDirectionX(){
-  			return myDirectionX;
-  		}   
-  		void setDirectionY(double y){
-  			myDirectionY = y;
-  		}   
-  		double getDirectionY(){
-  			return myDirectionY;
-  		}   
-  		void setPointDirection(int degrees){
-  			myPointDirection = (double)degrees;
-  		}   
-  		double getPointDirection(){
-  			return  myPointDirection;
-  		} 
+  		public void setX(int x) {myCenterX = (double) x;}  
+
+  		public int getX() {return (int) myCenterX;}   
+
+  		public void setY(int y) {myCenterY =  (double)y;}   
+
+  		public int getY() {return (int)myCenterY;}   
+
+  		public void setDirectionX(double x){myDirectionX = x;}   
+
+  		public double getDirectionX() {return myDirectionX;}   
+
+  		public void setDirectionY(double y) {myDirectionY = y;}   
+
+  		public double getDirectionY() {return myDirectionY;}   
+
+  		public void setPointDirection(int degrees) {myPointDirection = (double)degrees;}   
+
+  		public double getPointDirection() {return  myPointDirection;} 
+
 }
