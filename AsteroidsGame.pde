@@ -1,5 +1,5 @@
 //your variable declarations here
-Asteroid[] Jp =new Asteroid[10];
+ArrayList <Asteroid> Jp =new ArrayList <Asteroid> ();
 Spaceship Frida;
 Star[] sky = new Star[200];
 public void setup() 
@@ -14,8 +14,8 @@ public void setup()
   		sky[i]= new Star();
   	}
   	//making asteroid instances
-  	for(int i=0; i<Jp.length; i++)
-  		Jp[i]= new Asteroid();
+  	for(int i=0; i<=10; i++)
+  		Jp.add(new Asteroid());
 }
 public void draw() 
 {
@@ -28,10 +28,13 @@ public void draw()
   		sky[i].show();
   	}
   	//making asteroids show up
-  	for (int i=0; i<Jp.length; i++)
+  	for (int i=0; i<Jp.size(); i++)
   	{	
-  		Jp[i].show();
-  		Jp[i].move();
+  		Jp.get(i).move();
+  		Jp.get(i).show();
+  		float d = dist(Frida.getX(), Frida.getY(), Jp.get(i).getX(), Jp.get(i).getY());
+  		if(d < 15)
+  			Jp.remove(i);
   	}
 
 }
