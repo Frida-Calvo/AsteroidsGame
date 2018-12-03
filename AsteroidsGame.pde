@@ -1,13 +1,14 @@
 //your variable declarations here
 ArrayList <Asteroid> Jp =new ArrayList <Asteroid> ();
 Spaceship Frida;
+Bullet test;
 Star[] sky = new Star[200];
 public void setup() 
 {
 	size(500,500);
 	background(6, 26, 56);//space blue
   	Frida = new Spaceship();
-
+  	test = new Bullet(Frida);
   	//making star instances	
   	for (int i=0; i<sky.length; i++)
   	{
@@ -22,6 +23,8 @@ public void draw()
 	background(6, 26, 56);//space blue
   	Frida.show();
   	Frida.move();
+  	test.show();
+  	test.move();
   	//making stars show up
   	for (int i=0; i<sky.length; i++)
   	{
