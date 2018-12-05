@@ -15,10 +15,12 @@ Initialize myDirectionY as 5 * Math.sin(dRadians) + the directionY of the ship*/
 	double dRadians =myPointDirection*(Math.PI/180);
 	myDirectionX =  5 * Math.cos(dRadians) + theShip.getDirectionX();
 	myDirectionY = 5 * Math.sin(dRadians) + theShip.getDirectionY();
+	myColor= color(255, 128, 96);//red
 	}
 
 	public void show(){
-		fill(255, 128, 96);
+	    fill(myColor);   
+	    stroke(myColor);  
 		ellipse((int)myCenterX, (int)myCenterY, 6, 6);
 	}
 
@@ -41,4 +43,32 @@ Initialize myDirectionY as 5 * Math.sin(dRadians) + the directionY of the ship*/
   		public void setPointDirection(int degrees) {myPointDirection = (double)degrees;}   
 
   		public double getPointDirection() {return  myPointDirection;} 
+
+  		  public void move ()   //move the floater in the current direction of travel
+		  {      
+		    //change the x and y coordinates by myDirectionX and myDirectionY       
+		    myCenterX += myDirectionX;    
+		    myCenterY += myDirectionY;     
+
+		    //wrap around screen    
+		    if(myCenterX >width)
+		    {     
+		     ouch.remove(this);
+		    }    
+		    else if (myCenterX<0)
+		    {     
+		      ouch.remove(this);  
+		    }    
+		    if(myCenterY >height)
+		    {    
+		      ouch.remove(this);  
+		    } 
+		    
+		    else if (myCenterY < 0)
+		    {     
+		      ouch.remove(this);   
+		    }   
+
+		  } 
+
 }
