@@ -4,6 +4,8 @@ Spaceship Frida;
 ArrayList <Bullet> ouch = new ArrayList <Bullet> ();
 
 int healthScore = 50;
+boolean over= false;
+
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -27,8 +29,23 @@ public void draw()
   	{
   		sky[i].show();
   	}
+	if(healthScore==0){
+	   	
+	   	Frida.setDirectionX(0);
+	   	Frida.setDirectionY(0);
+	   	Frida.setPointDirection(0);
+	   	over=true;
+	   	textSize(40);
+	   	fill(229, 135, 140);
+	   	text("GAME OVER", 135, 260);
+	   	textSize(15);
+	   	text("REFRESH PAGE TO PLAY AGAIN", 138, 285);
+	   	}
+	
 
   	Frida.show();
+  	if(over==true)
+  		return;
   	Frida.move();
 
 	  //add health score
@@ -69,14 +86,8 @@ public void draw()
 	  	 }
 	  }
 
-	  // if(healthScore==0)
-	  	
-	  // 	text("GAME OVER", 250, 250);
-
-
-  	
-
 }
+
 public void keyPressed()
 {
 	// accelerate
